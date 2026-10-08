@@ -38,14 +38,31 @@ body{background:#120d18}
 .ember-particle{position:absolute;pointer-events:none;border-radius:50%;background:#ff69b4;box-shadow:0 0 10px #ff80bf;animation:riseAndFade 1.2s ease-out forwards}
 @keyframes riseAndFade{to{opacity:0;transform:translate(var(--dx),var(--dy)) scale(.2)}}
 .tarot-card{perspective:1000px;cursor:pointer}.tarot-card-inner{transition:transform .8s cubic-bezier(.175,.885,.32,1.275);transform-style:preserve-3d;position:relative}.tarot-card.flipped .tarot-card-inner{transform:rotateY(180deg)}.tarot-front,.tarot-back{backface-visibility:hidden;-webkit-backface-visibility:hidden;position:absolute;inset:0}.tarot-back{transform:rotateY(180deg)}
-.doll-stage{position:relative;width:180px;height:260px;margin:auto}.doll-hair{position:absolute;width:115px;height:135px;left:32px;top:22px;background:#17101c;border-radius:55% 55% 45% 45%;z-index:1;box-shadow:0 0 0 4px rgba(244,114,182,.15)}.doll-head{position:absolute;width:78px;height:92px;left:50px;top:43px;background:#f2c6b4;border-radius:48% 48% 45% 45%;z-index:3;border:2px solid rgba(255,105,180,.35)}.doll-eye{position:absolute;width:8px;height:11px;background:#30152d;border-radius:50%;top:37px}.doll-eye.left{left:20px}.doll-eye.right{right:20px}.doll-mouth{position:absolute;left:32px;top:61px;width:15px;height:8px;border-bottom:2px solid #831843;border-radius:50%}.doll-body{position:absolute;left:38px;top:125px;width:105px;height:110px;background:#831843;clip-path:polygon(25% 0,75% 0,100% 100%,0 100%);z-index:2;border:2px solid #f472b6}.doll-body.alt{background:#4a2b63}.doll-hat{position:absolute;left:39px;top:0;width:100px;height:70px;z-index:5;display:none}.doll-hat .cone{position:absolute;left:24px;top:0;width:52px;height:55px;background:#21102d;clip-path:polygon(50% 0,100% 100%,0 100%);border:2px solid #f472b6}.doll-hat .rim{position:absolute;left:10px;top:48px;width:80px;height:14px;border-radius:50%;background:#21102d;border:2px solid #f472b6}.doll-hat.show{display:block}
+.doll-stage{position:relative;width:180px;height:260px;margin:auto}
+.doll-hair{position:absolute;width:115px;height:135px;left:32px;top:22px;background:#17101c;border-radius:55% 55% 45% 45%;z-index:1;box-shadow:0 0 0 4px rgba(244,114,182,.15);transition:all 0.3s ease;}
+.doll-hair.style-bob{border-radius:40% 40% 10% 10%;height:95px;top:32px;}
+.doll-hair.style-braids{border-radius:50% 50% 30% 30%;height:160px;width:125px;left:27px;}
+.doll-hair.style-bun{border-radius:50%;height:100px;top:10px;}
+.doll-hair.style-wavy{border-radius:60% 60% 50% 50%;height:150px;}
+.doll-head{position:absolute;width:78px;height:92px;left:50px;top:43px;background:#f2c6b4;border-radius:48% 48% 45% 45%;z-index:3;border:2px solid rgba(255,105,180,.35)}
+.doll-eye{position:absolute;width:8px;height:11px;background:#30152d;border-radius:50%;top:37px}.doll-eye.left{left:20px}.doll-eye.right{right:20px}.doll-mouth{position:absolute;left:32px;top:61px;width:15px;height:8px;border-bottom:2px solid #831843;border-radius:50%}.doll-body{position:absolute;left:38px;top:125px;width:105px;height:110px;background:#831843;clip-path:polygon(25% 0,75% 0,100% 100%,0 100%);z-index:2;border:2px solid #f472b6}.doll-body.alt{background:#4a2b63}
+.doll-hat{position:absolute;left:39px;top:0;width:100px;height:70px;z-index:5;display:none}.doll-hat .cone{position:absolute;left:24px;top:0;width:52px;height:55px;background:#21102d;clip-path:polygon(50% 0,100% 100%,0 100%);border:2px solid #f472b6}.doll-hat .rim{position:absolute;left:10px;top:48px;width:80px;height:14px;border-radius:50%;background:#21102d;border:2px solid #f472b6}.doll-hat.show{display:block}
+/* New Accessories: Crown & Bow */
+.doll-crown{position:absolute;left:45px;top:18px;width:88px;height:35px;z-index:5;display:none;}
+.doll-crown .crown-base{position:absolute;bottom:0;width:100%;height:10px;background:#f59e0b;border:1px solid #fef08a;border-radius:2px;}
+.doll-crown .crown-peaks{position:absolute;top:0;width:100%;height:25px;background:#fbbf24;clip-path:polygon(0% 100%, 0% 20%, 25% 70%, 50% 0%, 75% 70%, 100% 20%, 100% 100%);}
+.doll-crown.show{display:block;}
+.doll-bow{position:absolute;left:60px;top:25px;width:60px;height:30px;z-index:5;display:none;}
+.doll-bow .bow-left{position:absolute;left:0;top:2px;width:26px;height:24px;background:#ff69b4;border-radius:50% 10% 10% 50%;border:1px solid #831843;}
+.doll-bow .bow-right{position:absolute;right:0;top:2px;width:26px;height:24px;background:#ff69b4;border-radius:10% 50% 50% 10%;border:1px solid #831843;}
+.doll-bow .bow-center{position:absolute;left:22px;top:6px;width:16px;height:16px;background:#831843;border-radius:50%;z-index:2;border:1px solid #ff69b4;}
+.doll-bow.show{display:block;}
+
 .familiar{font-size:40px;filter:drop-shadow(0 0 8px rgba(255,105,180,.5))}
 .candle-off .candle-flame{display:none}.candle-off .candle{opacity:.75}
 .rain-drop{position:absolute;width:1px;background:rgba(255,255,255,.35);height:18px;animation:rainfall linear infinite}
 @keyframes rainfall{to{transform:translateY(280px);opacity:0}}
 .range-pink{accent-color:#ff69b4}
-.chat-shell{min-height:520px}.chat-friends{max-height:520px;overflow:auto}.chat-friend{transition:.2s;border:1px solid rgba(74,43,99,.65);background:rgba(28,19,40,.7)}.chat-friend:hover,.chat-friend.active{border-color:#ff69b4;background:rgba(131,24,67,.22);box-shadow:0 0 12px rgba(255,105,180,.14)}.chat-avatar{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#831843,#4a2b63);border:1px solid rgba(244,114,182,.5)}.chat-messages{height:350px;overflow-y:auto;scroll-behavior:smooth}.chat-bubble{max-width:78%;padding:.65rem .85rem;border-radius:1.1rem;font-size:.78rem;line-height:1.45}.chat-bubble.them{background:rgba(28,19,40,.9);border:1px solid rgba(74,43,99,.8);border-bottom-left-radius:.35rem}.chat-bubble.me{background:linear-gradient(135deg,rgba(131,24,67,.9),rgba(74,43,99,.9));border:1px solid rgba(255,105,180,.35);border-bottom-right-radius:.35rem}.chat-time{font-size:9px;color:rgba(251,207,232,.38);margin-top:3px}.online-dot{width:8px;height:8px;border-radius:50%;background:#ff69b4;box-shadow:0 0 8px #ff69b4}.accessory-item{position:absolute;z-index:8;pointer-events:none}.acc-glasses{left:55px;top:73px;font-size:22px}.acc-earrings{left:39px;top:94px;font-size:13px;letter-spacing:42px}.acc-necklace{left:66px;top:112px;font-size:20px}.acc-wings{left:8px;top:130px;font-size:38px;letter-spacing:55px;z-index:1}.acc-tail{left:125px;top:190px;font-size:34px;z-index:1}.acc-bow{left:75px;top:122px;font-size:28px;z-index:6}.acc-crown{left:50px;top:18px;font-size:34px;z-index:7}.acc-flower{left:44px;top:20px;font-size:30px;z-index:7}.acc-horns{left:53px;top:17px;font-size:31px;z-index:7}
-
 textarea,input,select{outline:none}
 .toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);opacity:0;pointer-events:none;transition:.3s;z-index:10000}.toast.show{opacity:1;transform:translate(-50%,0)}
 @media(max-width:640px){header{position:sticky}.nav-scroll{scrollbar-width:none}.nav-scroll::-webkit-scrollbar{display:none}.doll-stage{transform:scale(.9)}}
@@ -70,11 +87,12 @@ textarea,input,select{outline:none}
  </div>
  <nav class="nav-scroll flex items-center gap-1 bg-goth-dark/80 p-1.5 rounded-full border border-pinkgoth-border/50 overflow-x-auto max-w-full">
   <button onclick="switchTab('sanctuary')" id="tab-sanctuary" class="tab-btn tab-active px-3 py-1.5 rounded-full text-xs font-cute flex items-center gap-2 border border-transparent whitespace-nowrap"><i class="fa-solid fa-house-chimney-window"></i>Room</button>
+  <button onclick="switchTab('profile')" id="tab-profile" class="tab-btn px-3 py-1.5 rounded-full text-xs font-cute text-pinkgoth-light/70 border border-transparent whitespace-nowrap"><i class="fa-solid fa-id-card"></i>Profile</button>
+  <button onclick="switchTab('chat')" id="tab-chat" class="tab-btn px-3 py-1.5 rounded-full text-xs font-cute text-pinkgoth-light/70 border border-transparent whitespace-nowrap"><i class="fa-solid fa-comments"></i>Coven Chat</button>
   <button onclick="switchTab('avatar')" id="tab-avatar" class="tab-btn px-3 py-1.5 rounded-full text-xs font-cute text-pinkgoth-light/70 border border-transparent whitespace-nowrap"><i class="fa-solid fa-user-ninja"></i>Doll Maker</button>
   <button onclick="switchTab('cauldron')" id="tab-cauldron" class="tab-btn px-3 py-1.5 rounded-full text-xs font-cute text-pinkgoth-light/70 border border-transparent whitespace-nowrap"><i class="fa-solid fa-flask"></i>Brew Potion</button>
   <button onclick="switchTab('tarot')" id="tab-tarot" class="tab-btn px-3 py-1.5 rounded-full text-xs font-cute text-pinkgoth-light/70 border border-transparent whitespace-nowrap"><i class="fa-solid fa-eye"></i>Oracle</button>
   <button onclick="switchTab('journal')" id="tab-journal" class="tab-btn px-3 py-1.5 rounded-full text-xs font-cute text-pinkgoth-light/70 border border-transparent whitespace-nowrap"><i class="fa-solid fa-book-bookmark"></i>Spellbook</button>
-  <button onclick="switchTab('chat')" id="tab-chat" class="tab-btn px-3 py-1.5 rounded-full text-xs font-cute text-pinkgoth-light/70 border border-transparent whitespace-nowrap"><i class="fa-solid fa-comments"></i>Friends Chat</button>
  </nav>
  <button onclick="toggleGlobalAudio()" id="global-audio-btn" class="goth-btn flex items-center gap-2 bg-goth-card/80 border border-pinkgoth-border/60 px-3 py-1.5 rounded-full text-pinkgoth-bright shrink-0"><i class="fa-solid fa-volume-xmark" id="global-audio-icon"></i><span class="text-xs font-cute hidden sm:inline">Cozy Sounds</span></button>
 </div>
@@ -129,6 +147,95 @@ textarea,input,select{outline:none}
 </div>
 </section>
 
+<!-- PROFILE -->
+<section id="sec-profile" class="tab-content space-y-6">
+<div class="grid lg:grid-cols-3 gap-6">
+ <div class="goth-glass rounded-3xl p-6 text-center border border-pinkgoth-accent/30 flex flex-col items-center">
+  <div class="w-32 h-32 rounded-full bg-gradient-to-b from-purple-950 to-pinkgoth-deep border-2 border-pinkgoth-accent flex items-center justify-center overflow-hidden mb-4 shadow-[0_0_20px_rgba(255,105,180,.4)]">
+   <div id="profile-avatar-preview" class="w-full h-full flex items-center justify-center"></div>
+  </div>
+  <h2 id="profile-display-name" class="font-cinzel text-2xl font-bold text-pinkgoth-light">Valorie</h2>
+  <span id="profile-display-title" class="text-xs text-pinkgoth-bright bg-pinkgoth-deep/40 px-3 py-1 rounded-full border border-pinkgoth-accent/40 mt-1">Supreme Witch 🔮</span>
+  <p id="profile-display-bio" class="text-xs text-pink-200/70 font-cute mt-4 italic">"Dwelling in shadow and glitter..."</p>
+  
+  <div class="w-full border-t border-pinkgoth-border/50 my-5"></div>
+  <div class="w-full grid grid-cols-2 gap-2 text-center text-xs">
+   <div class="bg-goth-dark/60 p-2 rounded-xl border border-pinkgoth-border/30"><span class="block text-pinkgoth-accent font-bold" id="profile-coven-name">Moonlight Sisters</span><span class="text-[10px] text-pink-300/50">Coven</span></div>
+   <div class="bg-goth-dark/60 p-2 rounded-xl border border-pinkgoth-border/30"><span class="block text-pinkgoth-accent font-bold" id="profile-friends-count">3</span><span class="text-[10px] text-pink-300/50">Friends</span></div>
+  </div>
+ </div>
+
+ <div class="lg:col-span-2 goth-glass rounded-3xl p-6 border border-pinkgoth-accent/30 space-y-4">
+  <h3 class="font-cinzel text-xl text-pinkgoth-light">Edit Profile</h3>
+  <div>
+   <label class="text-xs text-pinkgoth-accent block mb-1">Witch Name</label>
+   <input id="edit-name" class="w-full bg-goth-dark/80 border border-pinkgoth-border rounded-xl px-4 py-2 text-sm text-pinkgoth-light" value="Valorie">
+  </div>
+  <div>
+   <label class="text-xs text-pinkgoth-accent block mb-1">Title / Magical Rank</label>
+   <input id="edit-title" class="w-full bg-goth-dark/80 border border-pinkgoth-border rounded-xl px-4 py-2 text-sm text-pinkgoth-light" value="Supreme Witch 🔮">
+  </div>
+  <div>
+   <label class="text-xs text-pinkgoth-accent block mb-1">Coven Name</label>
+   <input id="edit-coven" class="w-full bg-goth-dark/80 border border-pinkgoth-border rounded-xl px-4 py-2 text-sm text-pinkgoth-light" value="Moonlight Sisters">
+  </div>
+  <div>
+   <label class="text-xs text-pinkgoth-accent block mb-1">Bio & Status</label>
+   <textarea id="edit-bio" class="w-full h-24 bg-goth-dark/80 border border-pinkgoth-border rounded-xl p-3 text-sm text-pinkgoth-pastel resize-none">Dwelling in shadow and glitter...</textarea>
+  </div>
+  <button onclick="saveProfile()" class="goth-btn px-6 py-2.5 rounded-full bg-pinkgoth-deep border border-pinkgoth-accent text-xs font-cute">Save Profile Sparkles ✨</button>
+ </div>
+</div>
+</section>
+
+<!-- CHAT -->
+<section id="sec-chat" class="tab-content space-y-6">
+<div class="grid lg:grid-cols-[280px_1fr] gap-6 h-[550px]">
+ <!-- Friends List -->
+ <div class="goth-glass rounded-3xl p-4 border border-pinkgoth-accent/30 flex flex-col justify-between">
+  <div>
+   <div class="flex items-center justify-between mb-4">
+    <h3 class="font-cinzel text-lg text-pinkgoth-light"><i class="fa-solid fa-user-group text-pinkgoth-bright"></i> Real Friends</h3>
+    <button onclick="showAddFriendModal()" class="text-xs text-pinkgoth-accent hover:text-pinkgoth-bright"><i class="fa-solid fa-plus-circle text-base"></i></button>
+   </div>
+   <div id="friends-list" class="space-y-2 overflow-y-auto max-h-[400px]">
+    <!-- Populated by JS -->
+   </div>
+  </div>
+  <button onclick="showAddFriendModal()" class="goth-btn w-full py-2 rounded-xl bg-pinkgoth-deep/80 border border-pinkgoth-accent text-xs font-cute text-center">+ Add New Friend</button>
+ </div>
+
+ <!-- Chat Box -->
+ <div class="goth-glass rounded-3xl p-4 border border-pinkgoth-accent/30 flex flex-col justify-between">
+  <!-- Active Friend Header -->
+  <div class="flex items-center justify-between border-b border-pinkgoth-border/50 pb-3">
+   <div class="flex items-center gap-3">
+    <div class="relative">
+     <div id="active-chat-avatar" class="w-10 h-10 rounded-full bg-pinkgoth-deep border border-pinkgoth-accent flex items-center justify-center text-lg">🌙</div>
+     <span id="active-chat-status" class="absolute bottom-0 right-0 w-3 h-3 bg-green-500 rounded-full border-2 border-goth-dark"></span>
+    </div>
+    <div>
+     <h4 id="active-chat-name" class="font-cinzel text-sm text-pinkgoth-light font-bold">Luna Rose</h4>
+     <p id="active-chat-sub" class="text-[10px] text-pink-300/60">Online · Witchy Bestie 🔮</p>
+    </div>
+   </div>
+   <span class="text-xs text-pinkgoth-accent bg-goth-dark px-3 py-1 rounded-full border border-pinkgoth-border/40">Safe Chat Safe Space ♡</span>
+  </div>
+
+  <!-- Messages Container -->
+  <div id="chat-messages" class="flex-1 overflow-y-auto my-3 space-y-3 p-2">
+   <!-- Populated by JS -->
+  </div>
+
+  <!-- Input Area -->
+  <div class="flex gap-2 items-center bg-goth-dark/80 p-2 rounded-2xl border border-pinkgoth-border/60">
+   <input id="chat-input" onkeydown="if(event.key==='Enter')sendMessage()" type="text" placeholder="Send a whisper to your friend..." class="flex-1 bg-transparent px-3 text-xs text-pinkgoth-light placeholder-pink-300/40">
+   <button onclick="sendMessage()" class="goth-btn w-9 h-9 rounded-xl bg-pinkgoth-deep border border-pinkgoth-accent flex items-center justify-center text-pinkgoth-bright"><i class="fa-solid fa-paper-plane text-xs"></i></button>
+  </div>
+ </div>
+</div>
+</section>
+
 <!-- DOLL -->
 <section id="sec-avatar" class="tab-content space-y-6">
 <div class="grid lg:grid-cols-2 gap-6">
@@ -136,20 +243,23 @@ textarea,input,select{outline:none}
   <h2 class="font-cinzel text-2xl text-pinkgoth-light">Doll Maker</h2><p class="text-xs text-pink-300/60 mb-4">Create the little witch who lives here.</p>
   <div class="rounded-3xl bg-gradient-to-b from-purple-950/50 to-goth-base p-4 min-h-[330px] flex items-center justify-center">
    <div class="doll-stage" id="doll-stage">
-    <div class="doll-hair" id="doll-hair"></div><div class="doll-hat" id="doll-hat"><div class="cone"></div><div class="rim"></div></div>
+    <div class="doll-hair" id="doll-hair"></div>
+    <div class="doll-hat" id="doll-hat"><div class="cone"></div><div class="rim"></div></div>
+    <div class="doll-crown" id="doll-crown"><div class="crown-peaks"></div><div class="crown-base"></div></div>
+    <div class="doll-bow" id="doll-bow"><div class="bow-left"></div><div class="bow-right"></div><div class="bow-center"></div></div>
     <div class="doll-head" id="doll-head"><span class="doll-eye left"></span><span class="doll-eye right"></span><span class="doll-mouth"></span></div>
     <div class="doll-body" id="doll-body"></div>
-     <div id="doll-accessories"></div>
    </div>
   </div>
   <div class="mt-4 flex justify-center gap-2"><button onclick="randomizeDoll()" class="goth-btn px-4 py-2 rounded-full bg-pinkgoth-deep border border-pinkgoth-accent text-xs">✨ Randomize</button><button onclick="saveDoll()" class="goth-btn px-4 py-2 rounded-full bg-goth-card border border-pinkgoth-border text-xs">♡ Save look</button></div>
  </div>
  <div class="goth-glass rounded-3xl p-6 border border-pinkgoth-accent/30 space-y-5">
   <h3 class="font-cinzel text-xl text-pinkgoth-light">Customize</h3>
+  <div><label class="text-xs text-pinkgoth-accent block mb-1">Hair Style</label><div class="grid grid-cols-5 gap-2" id="hairstyle-options"></div></div>
   <div><label class="text-xs text-pinkgoth-accent">Hair color</label><div class="grid grid-cols-4 gap-2 mt-2" id="hair-options"></div></div>
   <div><label class="text-xs text-pinkgoth-accent">Dress</label><div class="grid grid-cols-4 gap-2 mt-2" id="dress-options"></div></div>
   <div><label class="text-xs text-pinkgoth-accent">Skin</label><div class="grid grid-cols-4 gap-2 mt-2" id="skin-options"></div></div>
-  <div><label class="text-xs text-pinkgoth-accent">Accessory</label><div class="grid grid-cols-3 gap-2 mt-2" id="hat-options"></div></div>
+  <div><label class="text-xs text-pinkgoth-accent">Head Accessory</label><div class="grid grid-cols-4 gap-2 mt-2" id="hat-options"></div></div>
   <div class="rounded-2xl bg-goth-dark/60 p-4 text-xs text-pink-200/70">Your look is saved locally on this device, so your little witch can wait for you here.</div>
  </div>
 </div>
@@ -209,16 +319,6 @@ textarea,input,select{outline:none}
  </aside>
 </div>
 </section>
-<!-- FRIENDS CHAT -->
-<section id="sec-chat" class="tab-content space-y-6">
-<div class="goth-glass rounded-3xl p-5 sm:p-6 border border-pinkgoth-accent/30">
-<div class="flex flex-wrap items-center justify-between gap-3 mb-5"><div><h2 class="font-cinzel text-2xl text-pinkgoth-light">Friends Chat</h2><p class="text-xs text-pink-300/60">A tiny enchanted corner to talk to your favorite people.</p></div><span class="text-xs text-pinkgoth-accent bg-goth-dark/70 border border-pinkgoth-border rounded-full px-3 py-1">♡ private on this device</span></div>
-<div class="grid lg:grid-cols-[280px_1fr] gap-4 chat-shell">
-<aside class="bg-goth-dark/60 border border-pinkgoth-border/60 rounded-3xl p-3"><div class="flex items-center justify-between px-2 mb-3"><span class="font-cinzel text-sm text-pinkgoth-light">Your Coven</span><span id="friend-count" class="text-[9px] text-pink-300/50"></span></div><div id="friend-list" class="chat-friends space-y-2"></div></aside>
-<div class="bg-goth-dark/55 border border-pinkgoth-border/60 rounded-3xl overflow-hidden flex flex-col"><div class="p-4 border-b border-pinkgoth-border/50 flex items-center gap-3"><div id="chat-header-avatar" class="chat-avatar text-xl">🌙</div><div class="min-w-0"><div id="chat-header-name" class="font-cinzel text-sm text-pinkgoth-light truncate">Luna</div><div class="flex items-center gap-1.5"><span class="online-dot"></span><span id="chat-header-status" class="text-[9px] text-pink-200/50">online in the moonlight</span></div></div></div>
-<div id="chat-messages" class="chat-messages p-4 space-y-3 flex-1"></div>
-<div class="p-3 border-t border-pinkgoth-border/50"><div class="flex gap-2"><input id="chat-input" class="flex-1 min-w-0 bg-goth-base/80 border border-pinkgoth-border rounded-2xl px-4 py-3 text-xs text-pinkgoth-light placeholder:text-pink-200/30" placeholder="Whisper something..." maxlength="240"><button onclick="sendChatMessage()" class="goth-btn shrink-0 px-4 py-2 rounded-2xl bg-pinkgoth-deep border border-pinkgoth-accent text-xs"><i class="fa-solid fa-paper-plane"></i></button></div><div class="flex flex-wrap gap-2 mt-2"><button onclick="quickChat('I missed you ♡')" class="text-[9px] rounded-full px-3 py-1 border border-pinkgoth-border bg-goth-base/60">I missed you ♡</button><button onclick="quickChat('Come hang out with me ✨')" class="text-[9px] rounded-full px-3 py-1 border border-pinkgoth-border bg-goth-base/60">Come hang out ✨</button><button onclick="quickChat('You are doing amazing.')" class="text-[9px] rounded-full px-3 py-1 border border-pinkgoth-border bg-goth-base/60">You got this ♡</button></div></div></div></div></div>
-</section>
 </main>
 
 <footer class="relative z-10 text-center py-5 text-[10px] text-pink-300/40 font-cute">made softly for <span class="text-pinkgoth-accent">valorie</span> · click anywhere for sparkles ✦</footer>
@@ -228,11 +328,15 @@ textarea,input,select{outline:none}
 const $=id=>document.getElementById(id);
 const storage='valorie-safe-space';
 let state=JSON.parse(localStorage.getItem(storage)||'{}');
-state.doll=state.doll||{hair:'#17101c',dress:'#831843',skin:'#f2c6b4',hat:false};
+state.doll=state.doll||{hair:'#17101c',style:'default',dress:'#831843',skin:'#f2c6b4',hat:false};
+state.profile=state.profile||{name:'Valorie',title:'Supreme Witch 🔮',coven:'Moonlight Sisters',bio:'Dwelling in shadow and glitter...'};
 state.spells=state.spells||[];
 state.audio=state.audio||{master:false,rain:false,ambient:false};
-state.chat=state.chat||{};
-state.doll.accessories=state.doll.accessories||{head:'none',face:'none',extra:'none'};
+state.friends=state.friends||[
+ {id:1, name:'Luna Rose', icon:'🌙', status:'online', active:true, messages:[{sender:'them', text:'Hey witchy sister! ✨ How is your sanctuary today?'}]},
+ {id:2, name:'Raven Black', icon:'🖤', status:'offline', active:false, messages:[{sender:'them', text:'Left some dried lavender for your cauldron!'}]},
+ {id:3, name:'Starlet Pink', icon:'🎀', status:'online', active:false, messages:[{sender:'them', text:'Loved your new doll look! So aesthetic!'}]}
+];
 
 function persist(){localStorage.setItem(storage,JSON.stringify(state))}
 function toast(msg){const t=$('toast');t.textContent=msg;t.classList.add('show');clearTimeout(window._toast);window._toast=setTimeout(()=>t.classList.remove('show'),1800)}
@@ -242,6 +346,122 @@ function switchTab(tab){
  $('sec-'+tab).classList.add('active');$('tab-'+tab).classList.add('tab-active');
  window.scrollTo({top:0,behavior:'smooth'});
 }
+
+/* Profile Functions */
+function loadProfile(){
+ $('profile-display-name').textContent=state.profile.name;
+ $('profile-display-title').textContent=state.profile.title;
+ $('profile-display-bio').textContent='"'+state.profile.bio+'"';
+ $('profile-coven-name').textContent=state.profile.coven;
+ $('profile-friends-count').textContent=state.friends.length;
+ 
+ $('edit-name').value=state.profile.name;
+ $('edit-title').value=state.profile.title;
+ $('edit-coven').value=state.profile.coven;
+ $('edit-bio').value=state.profile.bio;
+}
+function saveProfile(){
+ state.profile.name=$('edit-name').value;
+ state.profile.title=$('edit-title').value;
+ state.profile.coven=$('edit-coven').value;
+ state.profile.bio=$('edit-bio').value;
+ persist();
+ loadProfile();
+ toast('Profile updated softly ♡');
+ sparkles(10);
+}
+
+/* Chat Functions */
+function renderFriends(){
+ const box=$('friends-list');box.innerHTML='';
+ state.friends.forEach(f=>{
+  const d=document.createElement('div');
+  d.className=`flex items-center justify-between p-2 rounded-2xl cursor-pointer transition ${f.active?'bg-pinkgoth-deep/40 border border-pinkgoth-accent/50':'bg-goth-dark/50 hover:bg-goth-dark'}`;
+  d.onclick=()=>selectFriend(f.id);
+  d.innerHTML=`
+   <div class="flex items-center gap-2.5">
+    <div class="relative text-lg">${f.icon}<span class="absolute -bottom-1 -right-1 w-2.5 h-2.5 ${f.status==='online'?'bg-green-500':'bg-gray-500'} rounded-full border border-goth-dark"></span></div>
+    <div class="text-left"><h5 class="text-xs font-cute text-pinkgoth-light font-bold">${f.name}</h5><span class="text-[9px] text-pink-300/50">${f.status}</span></div>
+   </div>
+  `;
+  box.appendChild(d);
+ });
+}
+
+function selectFriend(id){
+ state.friends.forEach(f=>f.active=(f.id===id));
+ persist();
+ renderFriends();
+ renderMessages();
+}
+
+function renderMessages(){
+ const active = state.friends.find(f=>f.active) || state.friends[0];
+ if(!active) return;
+ 
+ $('active-chat-name').textContent = active.name;
+ $('active-chat-avatar').textContent = active.icon;
+ $('active-chat-status').className = `absolute bottom-0 right-0 w-3 h-3 ${active.status==='online'?'bg-green-500':'bg-gray-500'} rounded-full border-2 border-goth-dark`;
+ $('active-chat-sub').textContent = `${active.status} · Witchy Friend 🔮`;
+ 
+ const container = $('chat-messages');
+ container.innerHTML = '';
+ active.messages.forEach(m=>{
+  const wrap = document.createElement('div');
+  wrap.className = `flex ${m.sender==='me'?'justify-end':'justify-start'}`;
+  wrap.innerHTML = `
+   <div class="max-w-[75%] p-3 rounded-2xl text-xs ${m.sender==='me'?'bg-pinkgoth-deep text-pinkgoth-pastel rounded-br-none border border-pinkgoth-accent/40':'bg-goth-dark text-pink-200/90 rounded-bl-none border border-pinkgoth-border/50'}">
+    ${m.text}
+   </div>
+  `;
+  container.appendChild(wrap);
+ });
+ container.scrollTop = container.scrollHeight;
+}
+
+function sendMessage(){
+ const input = $('chat-input');
+ const text = input.value.trim();
+ if(!text) return;
+ 
+ const active = state.friends.find(f=>f.active);
+ if(!active) return;
+ 
+ active.messages.push({sender:'me', text});
+ input.value = '';
+ renderMessages();
+ persist();
+ sparkles(4);
+ 
+ // Simulated Auto Reply
+ if(active.status === 'online'){
+  setTimeout(()=>{
+   const replies = ["Aww love that so much! 💖", "Totally agree with you, witchy sister!", "Sending you soft magical hugs ✨", "Ooh tell me more! 🔮"];
+   active.messages.push({sender:'them', text: replies[Math.floor(Math.random()*replies.length)]});
+   renderMessages();
+   persist();
+  }, 1200);
+ }
+}
+
+function showAddFriendModal(){
+ const name = prompt("Enter your friend's Witchy Username:");
+ if(name && name.trim()){
+  const newF = {
+   id: Date.now(),
+   name: name.trim(),
+   icon: ['🌸','🌙','🔮','🦇','✨'][Math.floor(Math.random()*5)],
+   status: 'online',
+   active: false,
+   messages: [{sender:'them', text: `Hi! I added you to my coven! ✨`}]
+  };
+  state.friends.push(newF);
+  persist();
+  renderFriends();
+  toast(`Added ${name} to your friends!`);
+ }
+}
+
 const affirmations=[
 'You are deserving of peace, gentle magic, and a soft place to land today.',
 'You do not have to earn rest. You are allowed to simply be.',
@@ -254,8 +474,7 @@ function refreshAffirmation(){$('affirmation-text').textContent='"'+affirmations
 function petCat(){const msgs=['purrr... you found the secret soft spot ♡','your familiar approves of this affection.','tiny witchy headbutt received.','the cat has decided you may stay.'];$('cat-message').textContent=msgs[Math.floor(Math.random()*msgs.length)];sparkles(8)}
 
 function toggleCandles(){
- const d=$('candle-display');d.classList.toggle('candle-off');const off=d.classList.contains('candle-off');
- $('candle-toggle-btn').textContent=off?'Light':'Extinguish';toast(off?'Candles extinguished 🕯':'The candles are glowing again ✨');
+ const d=$('candle-display');d.classList.toggle('candle-off');const off=d.classList.contains('candle-off');$('candle-toggle-btn').textContent=off?'Light':'Extinguish';toast(off?'Candles extinguished 🕯':'The candles are glowing again ✨');
 }
 function makeRain(){
  const layer=$('rain-layer');for(let i=0;i<32;i++){let r=document.createElement('i');r.className='rain-drop';r.style.left=Math.random()*100+'%';r.style.top=Math.random()*-100+'px';r.style.animationDuration=(.7+Math.random()*1.1)+'s';r.style.animationDelay=(-Math.random()*2)+'s';layer.appendChild(r)}
@@ -269,20 +488,69 @@ function initWindow(){
 }
 makeRain();initWindow();
 
+const hairStyles=[['Default','default'],['Bob','style-bob'],['Braids','style-braids'],['Bun','style-bun'],['Wavy','style-wavy']];
 const hairOpts=[['Midnight','#17101c'],['Berry','#58103d'],['Plum','#32124f'],['Rose','#9f3f68'],['Silver','#9d93a8'],['Cherry','#5b172b'],['Pink','#d85b9b'],['Blueblack','#18243d']];
 const dressOpts=[['Goth','#831843'],['Plum','#4a2b63'],['Night','#171221'],['Rose','#9b315d'],['Velvet','#54142e'],['Lilac','#6d4a85'],['Blackpink','#301526'],['Moon','#696070']];
 const skinOpts=[['Porcelain','#f6d8cc'],['Peach','#f2c6b4'],['Warm','#d99c82'],['Deep','#8f5749']];
-const headAcc=[['None','none','♡'],['Witch hat','hat','🧙‍♀️'],['Crown','crown','♛'],['Flower','flower','🌸'],['Devil horns','horns','😈'],['Halo','halo','😇']];
-const faceAcc=[['None','none','♡'],['Glasses','glasses','👓'],['Earrings','earrings','💎'],['Necklace','necklace','📿'],['Bow','bow','🎀'],['Mask','mask','🖤']];
-const extraAcc=[['None','none','♡'],['Wings','wings','🪽'],['Cat tail','tail','🐈‍⬛'],['Bat wings','batwings','🦇'],['Magic wand','wand','🪄'],['Heart charm','heart','💗']];
-function optionButton(label,value,type){const b=document.createElement('button');b.className='goth-btn rounded-xl border border-pinkgoth-border bg-goth-dark/70 p-2 text-[10px]';b.innerHTML='<span class="block h-5 rounded-lg mb-1 border border-white/10"></span>'+label;b.querySelector('span').style.background=value;b.onclick=()=>{state.doll[type]=value;persist();renderDoll()};return b}
-function accessoryButton(label,value,icon,type){const b=document.createElement('button');b.className='goth-btn rounded-xl border border-pinkgoth-border bg-goth-dark/70 p-2 text-[10px]';b.innerHTML='<span class="block text-lg h-6">'+icon+'</span>'+label;b.onclick=()=>{state.doll.accessories[type]=value;persist();renderDoll()};return b}
-function initDollOptions(){[['hair',hairOpts],['dress',dressOpts],['skin',skinOpts]].forEach(([type,arr])=>{const box=$(type==='hair'?'hair-options':type==='dress'?'dress-options':'skin-options');arr.forEach(x=>box.appendChild(optionButton(x[0],x[1],type)))});[['head',headAcc,'hat-options'],['face',faceAcc,'face-options'],['extra',extraAcc,'extra-options']].forEach(([type,arr,id])=>{const box=$(id);arr.forEach(x=>box.appendChild(accessoryButton(x[0],x[1],x[2],type)))})}
-function accessoryMarkup(a){const m=[];if(a.head==='crown')m.push('<span class="accessory-item acc-crown">♛</span>');if(a.head==='flower')m.push('<span class="accessory-item acc-flower">🌸</span>');if(a.head==='horns')m.push('<span class="accessory-item acc-horns">😈</span>');if(a.head==='halo')m.push('<span class="accessory-item acc-crown">😇</span>');if(a.head==='hat')m.push('<div class="doll-hat show"><div class="cone"></div><div class="rim"></div></div>');if(a.face==='glasses')m.push('<span class="accessory-item acc-glasses">👓</span>');if(a.face==='earrings')m.push('<span class="accessory-item acc-earrings">💎　💎</span>');if(a.face==='necklace')m.push('<span class="accessory-item acc-necklace">📿</span>');if(a.face==='bow')m.push('<span class="accessory-item acc-bow">🎀</span>');if(a.face==='mask')m.push('<span class="accessory-item acc-glasses">🖤</span>');if(a.extra==='wings')m.push('<span class="accessory-item acc-wings">🪽　🪽</span>');if(a.extra==='tail')m.push('<span class="accessory-item acc-tail">🐈‍⬛</span>');if(a.extra==='batwings')m.push('<span class="accessory-item acc-wings">🦇　🦇</span>');if(a.extra==='wand')m.push('<span class="accessory-item acc-tail">🪄</span>');if(a.extra==='heart')m.push('<span class="accessory-item acc-tail">💗</span>');return m.join('')}
-function renderDoll(){$('doll-hair').style.background=state.doll.hair;$('doll-body').style.background=state.doll.dress;$('doll-head').style.background=state.doll.skin;$('doll-hat').classList.toggle('show',state.doll.accessories.head==='hat');$('doll-accessories').innerHTML=accessoryMarkup(state.doll.accessories);$('room-avatar-preview').innerHTML='<div class="scale-[.58] origin-center"><div class="doll-stage"><div class="doll-hair" style="background:'+state.doll.hair+'"></div><div class="doll-head" style="background:'+state.doll.skin+'"><span class="doll-eye left"></span><span class="doll-eye right"></span><span class="doll-mouth"></span></div><div class="doll-body" style="background:'+state.doll.dress+'"></div><div class="doll-hat '+(state.doll.accessories.head==='hat'?'show':'')+'"><div class="cone"></div><div class="rim"></div></div>'+accessoryMarkup(state.doll.accessories)+'</div></div>';$("room-familiar-preview").innerHTML='<span class="familiar text-2xl">🐈‍⬛</span>'}
-function randomizeDoll(){const heads=headAcc.filter(x=>x[1]!=='none'),faces=faceAcc.filter(x=>x[1]!=='none'),extras=extraAcc.filter(x=>x[1]!=='none');state.doll={hair:hairOpts[Math.floor(Math.random()*hairOpts.length)][1],dress:dressOpts[Math.floor(Math.random()*dressOpts.length)][1],skin:skinOpts[Math.floor(Math.random()*skinOpts.length)][1],accessories:{head:Math.random()>.35?heads[Math.floor(Math.random()*heads.length)][1]:'none',face:Math.random()>.35?faces[Math.floor(Math.random()*faces.length)][1]:'none',extra:Math.random()>.45?extras[Math.floor(Math.random()*extras.length)][1]:'none'}};persist();renderDoll();sparkles(12)}
+
+function optionButton(label,value,type){
+ const b=document.createElement('button');b.className='goth-btn rounded-xl border border-pinkgoth-border bg-goth-dark/70 p-2 text-[10px]';b.innerHTML='<span class="block h-5 rounded-lg mb-1 border border-white/10"></span>'+label;b.querySelector('span').style.background=value;b.onclick=()=>{state.doll[type]=value;persist();renderDoll()};return b;
+}
+
+function initDollOptions(){
+ const hsBox=$('hairstyle-options');
+ hairStyles.forEach(st=>{
+  let b=document.createElement('button');
+  b.className='goth-btn rounded-xl border border-pinkgoth-border bg-goth-dark/70 p-2 text-[10px]';
+  b.textContent=st[0];
+  b.onclick=()=>{state.doll.style=st[1];persist();renderDoll()};
+  hsBox.appendChild(b);
+ });
+
+ [['hair',hairOpts],['dress',dressOpts],['skin',skinOpts]].forEach(([type,arr])=>{const box=$(type==='hair'?'hair-options':type==='dress'?'dress-options':'skin-options');arr.forEach(x=>box.appendChild(optionButton(x[0],x[1],type)))});
+ 
+ const box=$('hat-options');
+ [['None',false],['Witch Hat',true],['Crown','crown'],['Bow','bow']].forEach(x=>{
+  let b=document.createElement('button');
+  b.className='goth-btn rounded-xl border border-pinkgoth-border bg-goth-dark/70 p-2 text-xs';
+  b.textContent=x[0];
+  b.onclick=()=>{state.doll.hat=x[1];persist();renderDoll()};
+  box.appendChild(b);
+ });
+}
+
+function renderDoll(){
+ const hairEl=$('doll-hair');
+ hairEl.style.background=state.doll.hair;
+ hairEl.className='doll-hair '+(state.doll.style||'');
+ $('doll-body').style.background=state.doll.dress;
+ $('doll-head').style.background=state.doll.skin;
+ 
+ $('doll-hat').classList.toggle('show',state.doll.hat===true);
+ $('doll-crown').classList.toggle('show',state.doll.hat==='crown');$('doll-bow').classList.toggle('show',state.doll.hat==='bow');
+ 
+ const avatarHTML = '<div class="scale-[.58] origin-center"><div class="doll-stage"><div class="doll-hair '+(state.doll.style||'')+'" style="background:'+state.doll.hair+'"></div><div class="doll-hat '+(state.doll.hat===true?'show':'')+'"><div class="cone"></div><div class="rim"></div></div><div class="doll-crown '+(state.doll.hat==='crown'?'show':'')+'"><div class="crown-peaks"></div><div class="crown-base"></div></div><div class="doll-bow '+(state.doll.hat==='bow'?'show':'')+'"><div class="bow-left"></div><div class="bow-right"></div><div class="bow-center"></div></div><div class="doll-head" style="background:'+state.doll.skin+'"><span class="doll-eye left"></span><span class="doll-eye right"></span><span class="doll-mouth"></span></div><div class="doll-body" style="background:'+state.doll.dress+'"></div></div></div>';
+ 
+ $('room-avatar-preview').innerHTML=avatarHTML;
+ $('profile-avatar-preview').innerHTML=avatarHTML;
+ $('room-familiar-preview').innerHTML='<span class="familiar text-2xl">🐈‍⬛</span>';
+}
+
+function randomizeDoll(){
+ state.doll={
+  hair:hairOpts[Math.floor(Math.random()*hairOpts.length)][1],
+  style:hairStyles[Math.floor(Math.random()*hairStyles.length)][1],
+  dress:dressOpts[Math.floor(Math.random()*dressOpts.length)][1],
+  skin:skinOpts[Math.floor(Math.random()*skinOpts.length)][1],
+  hat:[false, true, 'crown', 'bow'][Math.floor(Math.random()*4)]
+ };
+ persist();
+ renderDoll();
+ sparkles(12);
+}
+
 function saveDoll(){persist();toast('Your little witch is safe here ♡')}
-initDollOptions();renderDoll();
+initDollOptions();renderDoll();loadProfile();renderFriends();renderMessages();
 
 const ingredients=[
 ['Moonwater','💧'],['Rose Petals','🌹'],['Lavender','🪻'],['Star Dust','✨'],['Blackberry','🫐'],['Honey','🍯'],['Mushroom','🍄'],['Cinnamon','🪵'],['Crystal','💎']
@@ -325,7 +593,7 @@ function renderSpells(){
  state.spells.forEach((s,i)=>{const b=document.createElement('button');b.className='w-full text-left rounded-xl border border-pinkgoth-border/60 bg-goth-dark/70 p-3 hover:border-pinkgoth-accent transition';b.innerHTML='<div class="text-xs text-pinkgoth-light truncate">'+(s.title||'Untitled spell')+'</div><div class="text-[9px] text-pink-200/40 mt-1">'+new Date(s.time).toLocaleDateString()+'</div>';b.onclick=()=>loadSpell(i);box.appendChild(b)})
 }
 function saveSpell(){
- const title=$('spell-title').value.trim()||'Untitled spell',text=$('spell-text').value;
+ const title=$('spell-title').value.trim()\vert{}\vert{}'Untitled spell',text=$('spell-text').value;
  if(!text.trim()){toast('Write something first, little witch ♡');return}
  state.spells.unshift({title,text,time:Date.now()});persist();renderSpells();$('save-state').textContent='Saved just now ♡';toast('Spellbook page saved');
 }
@@ -333,16 +601,6 @@ function loadSpell(i){const s=state.spells[i];$('spell-title').value=s.title;$('
 function newSpell(){$('spell-title').value='';$('spell-text').value='';$('save-state').textContent='New page';$('spell-title').focus()}
 function deleteSpell(){$('spell-title').value='';$('spell-text').value='';$('save-state').textContent='Page cleared'}
 renderSpells();
-
-const friends=[{id:'luna',name:'Luna',icon:'🌙',status:'online in the moonlight',replies:['I was waiting for you ♡','The moon looks pretty tonight.','Tell me everything, little witch ✨','You can stay here as long as you need.']},{id:'violet',name:'Violet',icon:'🦇',status:'online · lurking softly',replies:['STOPPP I love that 😭♡','Okay wait, I need details.','That is so you omg.','Come sit with me. We have gossip.']},{id:'mira',name:'Mira',icon:'🌹',status:'away · probably reading',replies:['I am listening ♡','That sounds like a chapter from a gothic novel.','You deserve a softer day.','Sending you a tiny rose 🌹']},{id:'nyx',name:'Nyx',icon:'🐈‍⬛',status:'online · familiar duty',replies:['meow. translation: yes.','The familiar council approves.','I brought snacks.','We should cause harmless chaos.']}];let activeFriend='luna';
-function chatStore(id){state.chat[id]=state.chat[id]||[];return state.chat[id]}
-function renderFriends(){const box=$('friend-list');box.innerHTML='';$('friend-count').textContent=friends.length+' friends';friends.forEach(f=>{const b=document.createElement('button');b.className='chat-friend '+(f.id===activeFriend?'active':'')+' w-full rounded-2xl p-3 flex items-center gap-3 text-left';b.innerHTML='<div class="chat-avatar">'+f.icon+'</div><div class="min-w-0 flex-1"><div class="text-xs text-pinkgoth-light truncate">'+f.name+'</div><div class="text-[9px] text-pink-200/40 truncate">'+f.status+'</div></div>';b.onclick=()=>selectFriend(f.id);box.appendChild(b)})}
-function selectFriend(id){activeFriend=id;renderFriends();renderChat()}
-function escapeChat(t){const d=document.createElement('div');d.textContent=t;return d.innerHTML}
-function renderChat(){const f=friends.find(x=>x.id===activeFriend)||friends[0];$('chat-header-avatar').textContent=f.icon;$('chat-header-name').textContent=f.name;$('chat-header-status').textContent=f.status;const box=$('chat-messages');box.innerHTML='';const messages=chatStore(f.id);if(!messages.length){box.innerHTML='<div class="h-full flex items-center justify-center text-center text-xs text-pink-200/35 px-8">No whispers yet.<br>Send the first little message ✦</div>';return}messages.forEach(m=>{const row=document.createElement('div');row.className='flex '+(m.me?'justify-end':'justify-start');row.innerHTML='<div><div class="chat-bubble '+(m.me?'me':'them')+'">'+escapeChat(m.text)+'</div><div class="chat-time '+(m.me?'text-right':'')+'">'+m.time+'</div></div>';box.appendChild(row)});box.scrollTop=box.scrollHeight}
-function sendChatMessage(){const input=$('chat-input'),text=input.value.trim();if(!text)return;chatStore(activeFriend).push({me:true,text,time:new Date().toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'})});persist();input.value='';renderChat();sparkles(4);const f=friends.find(x=>x.id===activeFriend);setTimeout(()=>{const reply=f.replies[Math.floor(Math.random()*f.replies.length)];chatStore(activeFriend).push({me:false,text:reply,time:new Date().toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'})});persist();renderChat();sparkles(3)},700+Math.random()*900)}
-function quickChat(text){$('chat-input').value=text;sendChatMessage()}
-$('chat-input').addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();sendChatMessage()}});renderFriends();renderChat();
 
 let audioCtx=null,rainGain=null,ambientGain=null;
 function audioSetup(){
