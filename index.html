@@ -47,7 +47,6 @@ body{background:#120d18}
 .doll-head{position:absolute;width:78px;height:92px;left:50px;top:43px;background:#f2c6b4;border-radius:48% 48% 45% 45%;z-index:3;border:2px solid rgba(255,105,180,.35)}
 .doll-eye{position:absolute;width:8px;height:11px;background:#30152d;border-radius:50%;top:37px}.doll-eye.left{left:20px}.doll-eye.right{right:20px}.doll-mouth{position:absolute;left:32px;top:61px;width:15px;height:8px;border-bottom:2px solid #831843;border-radius:50%}.doll-body{position:absolute;left:38px;top:125px;width:105px;height:110px;background:#831843;clip-path:polygon(25% 0,75% 0,100% 100%,0 100%);z-index:2;border:2px solid #f472b6}.doll-body.alt{background:#4a2b63}
 .doll-hat{position:absolute;left:39px;top:0;width:100px;height:70px;z-index:5;display:none}.doll-hat .cone{position:absolute;left:24px;top:0;width:52px;height:55px;background:#21102d;clip-path:polygon(50% 0,100% 100%,0 100%);border:2px solid #f472b6}.doll-hat .rim{position:absolute;left:10px;top:48px;width:80px;height:14px;border-radius:50%;background:#21102d;border:2px solid #f472b6}.doll-hat.show{display:block}
-/* New Accessories: Crown & Bow */
 .doll-crown{position:absolute;left:45px;top:18px;width:88px;height:35px;z-index:5;display:none;}
 .doll-crown .crown-base{position:absolute;bottom:0;width:100%;height:10px;background:#f59e0b;border:1px solid #fef08a;border-radius:2px;}
 .doll-crown .crown-peaks{position:absolute;top:0;width:100%;height:25px;background:#fbbf24;clip-path:polygon(0% 100%, 0% 20%, 25% 70%, 50% 0%, 75% 70%, 100% 20%, 100% 100%);}
@@ -191,23 +190,18 @@ textarea,input,select{outline:none}
 <!-- CHAT -->
 <section id="sec-chat" class="tab-content space-y-6">
 <div class="grid lg:grid-cols-[280px_1fr] gap-6 h-[550px]">
- <!-- Friends List -->
  <div class="goth-glass rounded-3xl p-4 border border-pinkgoth-accent/30 flex flex-col justify-between">
   <div>
    <div class="flex items-center justify-between mb-4">
     <h3 class="font-cinzel text-lg text-pinkgoth-light"><i class="fa-solid fa-user-group text-pinkgoth-bright"></i> Real Friends</h3>
     <button onclick="showAddFriendModal()" class="text-xs text-pinkgoth-accent hover:text-pinkgoth-bright"><i class="fa-solid fa-plus-circle text-base"></i></button>
    </div>
-   <div id="friends-list" class="space-y-2 overflow-y-auto max-h-[400px]">
-    <!-- Populated by JS -->
-   </div>
+   <div id="friends-list" class="space-y-2 overflow-y-auto max-h-[400px]"></div>
   </div>
   <button onclick="showAddFriendModal()" class="goth-btn w-full py-2 rounded-xl bg-pinkgoth-deep/80 border border-pinkgoth-accent text-xs font-cute text-center">+ Add New Friend</button>
  </div>
 
- <!-- Chat Box -->
  <div class="goth-glass rounded-3xl p-4 border border-pinkgoth-accent/30 flex flex-col justify-between">
-  <!-- Active Friend Header -->
   <div class="flex items-center justify-between border-b border-pinkgoth-border/50 pb-3">
    <div class="flex items-center gap-3">
     <div class="relative">
@@ -222,12 +216,8 @@ textarea,input,select{outline:none}
    <span class="text-xs text-pinkgoth-accent bg-goth-dark px-3 py-1 rounded-full border border-pinkgoth-border/40">Safe Chat Safe Space ♡</span>
   </div>
 
-  <!-- Messages Container -->
-  <div id="chat-messages" class="flex-1 overflow-y-auto my-3 space-y-3 p-2">
-   <!-- Populated by JS -->
-  </div>
+  <div id="chat-messages" class="flex-1 overflow-y-auto my-3 space-y-3 p-2"></div>
 
-  <!-- Input Area -->
   <div class="flex gap-2 items-center bg-goth-dark/80 p-2 rounded-2xl border border-pinkgoth-border/60">
    <input id="chat-input" onkeydown="if(event.key==='Enter')sendMessage()" type="text" placeholder="Send a whisper to your friend..." class="flex-1 bg-transparent px-3 text-xs text-pinkgoth-light placeholder-pink-300/40">
    <button onclick="sendMessage()" class="goth-btn w-9 h-9 rounded-xl bg-pinkgoth-deep border border-pinkgoth-accent flex items-center justify-center text-pinkgoth-bright"><i class="fa-solid fa-paper-plane text-xs"></i></button>
@@ -433,7 +423,6 @@ function sendMessage(){
  persist();
  sparkles(4);
  
- // Simulated Auto Reply
  if(active.status === 'online'){
   setTimeout(()=>{
    const replies = ["Aww love that so much! 💖", "Totally agree with you, witchy sister!", "Sending you soft magical hugs ✨", "Ooh tell me more! 🔮"];
@@ -510,7 +499,8 @@ function initDollOptions(){
  [['hair',hairOpts],['dress',dressOpts],['skin',skinOpts]].forEach(([type,arr])=>{const box=$(type==='hair'?'hair-options':type==='dress'?'dress-options':'skin-options');arr.forEach(x=>box.appendChild(optionButton(x[0],x[1],type)))});
  
  const box=$('hat-options');
- [['None',false],['Witch Hat',true],['Crown','crown'],['Bow','bow']].forEach(x=>{
+ const hatOptionsList = [['None',false],['Witch Hat',true],['Crown','crown'],['Bow','bow']];
+ hatOptionsList.forEach(x=>{
   let b=document.createElement('button');
   b.className='goth-btn rounded-xl border border-pinkgoth-border bg-goth-dark/70 p-2 text-xs';
   b.textContent=x[0];
@@ -593,7 +583,8 @@ function renderSpells(){
  state.spells.forEach((s,i)=>{const b=document.createElement('button');b.className='w-full text-left rounded-xl border border-pinkgoth-border/60 bg-goth-dark/70 p-3 hover:border-pinkgoth-accent transition';b.innerHTML='<div class="text-xs text-pinkgoth-light truncate">'+(s.title||'Untitled spell')+'</div><div class="text-[9px] text-pink-200/40 mt-1">'+new Date(s.time).toLocaleDateString()+'</div>';b.onclick=()=>loadSpell(i);box.appendChild(b)})
 }
 function saveSpell(){
- const title=$('spell-title').value.trim()\vert{}\vert{}'Untitled spell',text=$('spell-text').value;
+ const title=$('spell-title').value.trim() || 'Untitled spell';
+ const text=$('spell-text').value;
  if(!text.trim()){toast('Write something first, little witch ♡');return}
  state.spells.unshift({title,text,time:Date.now()});persist();renderSpells();$('save-state').textContent='Saved just now ♡';toast('Spellbook page saved');
 }
